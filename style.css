@@ -1,0 +1,488 @@
+/* ===== 1. CONFIGURAÇÕES GLOBAIS E TEMA CYBERPUNK ===== */
+:root {
+    --bg-dark: #0A192F;
+    --bg-light-dark: #112240;
+    --text-light: #CCD6F6;
+    --text-medium: #8892B0;
+    --accent-neon: #64FFDA;
+    --border-color: #233554;
+
+    --font-heading: 'Roboto Mono', monospace;
+    --font-body: 'Rajdhani', sans-serif;
+}
+
+/* ===== 2. RESET BÁSICO E ESTILOS DO BODY ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    /* O scroll suave é controlado pelo JS (Lenis) */
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+    font-family: var(--font-body);
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+main {
+    padding-top: 80px;
+}
+
+/* ===== 3. LAYOUT E COMPONENTES GERAIS ===== */
+a {
+    color: var(--accent-neon);
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+a:hover {
+    filter: brightness(1.2);
+}
+
+section {
+    padding: 80px 20px;
+    position: relative;
+    z-index: 1;
+}
+
+.section-content {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+h1, h2, h3 {
+    font-family: var(--font-heading);
+    color: var(--text-light);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+h2 {
+    font-size: 2.2rem;
+    margin-bottom: 40px;
+    text-align: center;
+    color: var(--accent-neon);
+}
+
+h3 {
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+}
+
+p {
+    color: var(--text-light); 
+    margin-bottom: 15px;
+    letter-spacing: 0.5px;
+}
+
+.button-primary, .button-secondary {
+    display: inline-block;
+    padding: 12px 24px;
+    border-radius: 4px;
+    font-weight: 700;
+    font-family: var(--font-heading);
+    transition: all 0.3s ease;
+}
+
+.button-primary {
+    background-color: transparent;
+    color: var(--accent-neon);
+    border: 1px solid var(--accent-neon);
+}
+
+.button-primary:hover {
+    background-color: rgba(100, 255, 218, 0.1);
+}
+
+.button-secondary {
+    background-color: var(--border-color);
+    color: var(--text-light);
+    border: 1px solid var(--border-color);
+}
+
+.button-secondary:hover {
+    background-color: #3f557e;
+}
+
+
+/* ===== 4. HEADER E NAVEGAÇÃO (CORRIGIDO) ===== */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: rgba(10, 25, 47, 0.8);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border-color);
+    z-index: 1000;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+    height: 80px;
+}
+
+.nav-logo {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--accent-neon);
+    z-index: 1001;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+.nav-menu a {
+    color: var(--text-light);
+    font-weight: 700;
+    font-family: var(--font-heading);
+}
+
+.nav-menu a:hover {
+    color: var(--accent-neon);
+}
+
+.menu-hamburguer {
+    display: none;
+    cursor: pointer;
+    background: transparent;
+    border: none;
+    z-index: 1001;
+}
+
+.menu-hamburguer .bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    transition: all 0.3s ease-in-out;
+    background-color: var(--text-light);
+}
+/* ===== 5. SEÇÃO HERO E ANIMAÇÃO DE FUNDO ===== */
+#digital-rain {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+#home {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    min-height: 100vh;
+    text-align: left;
+    padding: 0 20px;
+}
+
+.hero-content {
+    position: relative;
+    max-width: 1000px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+#home h1 {
+    font-size: clamp(2.5rem, 6vw, 5rem);
+    position: relative;
+    color: var(--text-light);
+    animation: glitch 1.5s linear infinite;
+    text-transform: none;
+}
+
+#home h1::before,
+#home h1::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--bg-dark);
+    overflow: hidden;
+}
+
+#home h1::before {
+    left: 2px;
+    text-shadow: -2px 0 var(--accent-neon);
+    clip: rect(44px, 450px, 56px, 0);
+    animation: glitch-anim 5s infinite linear alternate-reverse;
+}
+
+#home h1::after {
+    left: -2px;
+    text-shadow: -2px 0 #FF00C1, 2px 2px var(--accent-neon);
+    clip: rect(85px, 450px, 140px, 0);
+    animation: glitch-anim-2 5s infinite linear alternate-reverse;
+}
+
+#home h2 {
+    font-size: clamp(1.2rem, 3vw, 1.8rem);
+    text-align: left;
+    color: var(--text-light);
+    margin: 10px 0 20px 0;
+}
+
+#home .hero-subtitle {
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin-bottom: 30px;
+}
+
+.hero-links .social-link {
+    margin-left: 20px;
+    font-weight: 700;
+}
+
+/* ===== 6. SEÇÃO HOBBIES ===== */
+.hobbies-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.hobby-card {
+    background-color: var(--bg-light-dark);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    padding: 25px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hobby-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 15px rgba(100, 255, 218, 0.2);
+}
+
+.hobby-card i {
+    font-size: 2.5rem;
+    color: var(--accent-neon);
+    margin-bottom: 15px;
+}
+
+/* ===== 7. ESTILOS DE OUTRAS SEÇÕES (PROJETOS, EXPERIÊNCIA, ETC.) ===== */
+.projects-grid, .career-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+}
+
+.project-card, .job, .education-entry {
+    background-color: var(--bg-light-dark);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    padding: 25px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card {
+    display: flex;
+    flex-direction: column;
+}
+
+.project-links {
+    margin-top: auto;
+    padding-top: 15px;
+}
+
+.project-card:hover, .job:hover, .education-entry:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 15px rgba(100, 255, 218, 0.2);
+}
+
+.tech-tags {
+    margin: 15px 0;
+}
+
+.tech-tags span {
+    background-color: rgba(100, 255, 218, 0.1);
+    color: var(--accent-neon);
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    margin: 0 5px 5px 0;
+    display: inline-block;
+    font-family: var(--font-heading);
+}
+
+.job ul {
+    list-style: none;
+    padding-left: 0;
+}
+.job ul li {
+    position: relative;
+    padding-left: 25px;
+    margin-bottom: 10px;
+}
+.job ul li::before {
+    content: '»';
+    position: absolute;
+    left: 0;
+    color: var(--accent-neon);
+}
+
+
+/* ===== 8. FOOTER E CONTATO ===== */
+#contact .section-content {
+    text-align: center;
+}
+
+.contact-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+footer {
+    text-align: center;
+    padding: 25px;
+    border-top: 1px solid var(--border-color);
+    color: var(--text-medium);
+    background-color: var(--bg-dark);
+    position: relative;
+    z-index: 10;
+    font-family: var(--font-heading);
+}
+/* ===== 9. ANIMAÇÕES ===== */
+@keyframes glitch {
+    2%, 64% { transform: translate(2px, 0) skew(0deg); }
+    4%, 60% { transform: translate(-2px, 0) skew(0deg); }
+    62% { transform: translate(0, 0) skew(5deg); }
+}
+
+@keyframes glitch-anim {
+    0% { clip: rect(31px, 9999px, 94px, 0); transform: skew(0.3deg); }
+    5% { clip: rect(41px, 9999px, 57px, 0); transform: skew(0.1deg); }
+    10% { clip: rect(33px, 9999px, 8px, 0); transform: skew(0.4deg); }
+    15% { clip: rect(61px, 9999px, 98px, 0); transform: skew(0.9deg); }
+    20% { clip: rect(63px, 9999px, 1px, 0); transform: skew(0.2deg); }
+    25% { clip: rect(69px, 9999px, 114px, 0); transform: skew(0.8deg); }
+    30% { clip: rect(9px, 9999px, 103px, 0); transform: skew(0.1deg); }
+    35% { clip: rect(98px, 9999px, 131px, 0); transform: skew(0.6deg); }
+    40% { clip: rect(27px, 9999px, 60px, 0); transform: skew(0.2deg); }
+    45% { clip: rect(41px, 9999px, 45px, 0); transform: skew(0.1deg); }
+    50% { clip: rect(48px, 9999px, 140px, 0); transform: skew(0.8deg); }
+    55% { clip: rect(74px, 9999px, 52px, 0); transform: skew(1deg); }
+    60% { clip: rect(10px, 9999px, 132px, 0); transform: skew(0.3deg); }
+    65% { clip: rect(93px, 9999px, 4px, 0); transform: skew(0.2deg); }
+    70% { clip: rect(140px, 9999px, 109px, 0); transform: skew(0.8deg); }
+    75% { clip: rect(62px, 9999px, 73px, 0); transform: skew(0.6deg); }
+    80% { clip: rect(34px, 9999px, 137px, 0); transform: skew(0.4deg); }
+    85% { clip: rect(135px, 9999px, 102px, 0); transform: skew(0.5deg); }
+    90% { clip: rect(13px, 9999px, 118px, 0); transform: skew(0.8deg); }
+    95% { clip: rect(109px, 9999px, 89px, 0); transform: skew(0.2deg); }
+    100% { clip: rect(58px, 9999px, 142px, 0); transform: skew(1deg); }
+}
+
+@keyframes glitch-anim-2 {
+    0% { clip: rect(93px, 9999px, 29px, 0); transform: skew(0.4deg); }
+    5% { clip: rect(33px, 9999px, 133px, 0); transform: skew(0.3deg); }
+    10% { clip: rect(139px, 9999px, 135px, 0); transform: skew(0.5deg); }
+    15% { clip: rect(122px, 9999px, 105px, 0); transform: skew(0.4deg); }
+    20% { clip: rect(106px, 9999px, 79px, 0); transform: skew(0.2deg); }
+    25% { clip: rect(21px, 9999px, 100px, 0); transform: skew(0.8deg); }
+    30% { clip: rect(99px, 9999px, 72px, 0); transform: skew(0.2deg); }
+    35% { clip: rect(16px, 9999px, 43px, 0); transform: skew(0.5deg); }
+    40% { clip: rect(84px, 9999px, 119px, 0); transform: skew(0.7deg); }
+    45% { clip: rect(124px, 9999px, 126px, 0); transform: skew(0.7deg); }
+    50% { clip: rect(21px, 9999px, 93px, 0); transform: skew(0.1deg); }
+    55% { clip: rect(136px, 9999px, 102px, 0); transform: skew(0.5deg); }
+    60% { clip: rect(117px, 9999px, 35px, 0); transform: skew(0.5deg); }
+    65% { clip: rect(104px, 9999px, 59px, 0); transform: skew(0.2deg); }
+    70% { clip: rect(140px, 9999px, 107px, 0); transform: skew(0.8deg); }
+    75% { clip: rect(57px, 9999px, 10px, 0); transform: skew(0.3deg); }
+    80% { clip: rect(80px, 9999px, 115px, 0); transform: skew(0.6deg); }
+    85% { clip: rect(104px, 9999px, 63px, 0); transform: skew(0.1deg); }
+    90% { clip: rect(13px, 9999px, 84px, 0); transform: skew(0.5deg); }
+    95% { clip: rect(40px, 9999px, 33px, 0); transform: skew(0.2deg); }
+    100% { clip: rect(30px, 9999px, 13px, 0); transform: skew(0.8deg); }
+}
+
+#contact .status {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+    font-family: var(--font-heading);
+}
+
+#contact .status-indicator {
+    width: 12px;
+    height: 12px;
+    background-color: var(--accent-neon);
+    border-radius: 50%;
+    box-shadow: 0 0 10px var(--accent-neon);
+}
+
+/* ===== 10. Bloco de Responsividade (CORRIGIDO) ===== */
+@media (max-width: 768px) {
+    /* Ajustes gerais */
+    section { padding: 60px 20px; }
+    h2 { font-size: 1.8rem; }
+    .nav-logo { font-size: 1.1rem; }
+    .projects-grid, .hobbies-grid, .career-grid { grid-template-columns: 1fr; }
+
+    /* Lógica do Menu Hambúrguer */
+    .menu-hamburguer {
+        display: block;
+    }
+
+    .nav-menu {
+        display: flex;
+        position: fixed;
+        left: -100%;
+        top: 0;
+        gap: 0;
+        flex-direction: column;
+        background-color: var(--bg-dark);
+        width: 100%;
+        height: 100vh;
+        text-align: center;
+        transition: 0.3s;
+        justify-content: center;
+        padding: 0;
+    }
+    
+    .nav-menu.active {
+        left: 0;
+    }
+    
+    .nav-menu li {
+        margin: 20px 0;
+    }
+
+    .nav-menu a {
+        font-size: 1.5rem;
+    }
+
+    /* Animação do ícone hambúrguer para "X" */
+    .menu-hamburguer.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+    .menu-hamburguer.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+    .menu-hamburguer.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+}

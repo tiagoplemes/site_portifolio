@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gustavo Freitas | Desenvolvedor de Software</title>
+    
+    <link rel="stylesheet" href="style.css">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;700&family=Roboto+Mono:wght@700&display=swap" rel="stylesheet">
+    
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+</head>
+<body>
+    <canvas id="digital-rain"></canvas>
+
+    <header>
+        <nav class="nav-container">
+            <a href="#home" class="nav-logo">[GUSTAVO FREITAS]</a>
+            <ul class="nav-menu">
+                <li><a href="#about">SOBRE</a></li>
+                <li><a href="#projects">PROJETOS</a></li>
+                <li><a href="#hobbies">HOBBIES</a></li>
+                <li><a href="#experience">EXPERIÊNCIA</a></li>
+                <li><a href="#contact">CONTATO</a></li>
+            </ul>
+            <button class="menu-hamburguer" aria-label="Abrir menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home">
+            <div class="hero-content">
+                <h1 id="main-title" data-text="Gustavo Freitas">Gustavo Freitas</h1>
+                <h2>Desenvolvedor de Software // Back-end & Full Stack</h2>
+                <p class="hero-subtitle">
+                    Transformo ideias complexas em soluções de software escaláveis, seguras e de alto impacto, com foco em tecnologias Java, Spring, PHP e Angular.
+                </p>
+                <div class="hero-links">
+                    <a href="#projects" class="button-primary">Ver Projetos</a>
+                    <a href="https://www.linkedin.com/in/gustavofirmino/" target="_blank" class="button-secondary">LINKEDIN</a>
+                </div>
+            </div>
+        </section>
+        
+        <section id="about">
+            <div class="section-content">
+                <h2>[SOBRE MIM]</h2>
+                <p>
+                    Como um entusiasta da tecnologia e estudante de Engenharia de Software, minha paixão é resolver problemas através do código. Tenho experiência prática no desenvolvimento de aplicações full-stack, com foco em criar um back-end robusto com Java (Spring Boot) e PHP, e interfaces dinâmicas no front-end com Angular e TypeScript.
+                </p>
+                <p>
+                    Minha atuação como Estagiário em Análise de Dados na SECTI-GO consolidou minha capacidade analítica, onde utilizei Python e SQL para automatizar relatórios e otimizar processos, resultando em uma redução de mais de 70% no tempo de produção. Essa visão orientada a dados complementa minha abordagem como desenvolvedor para criar soluções ainda mais eficientes.
+                </p>
+            </div>
+        </section>
+        
+        <section id="projects">
+            <div class="section-content">
+                <h2>[PROJETOS EM DESTAQUE]</h2>
+                 <div class="projects-grid">
+                    <div class="project-card">
+                        <h3>SISTEMA DE MONITORAMENTO DE SERVIÇOS WEB</h3>
+                        <p>Plataforma full-stack para monitorar a disponibilidade e performance de APIs e websites, visando garantir a estabilidade de serviços críticos através de um dashboard de acompanhamento em tempo real.</p>
+                        <div class="tech-tags">
+                            <span>Java 21</span><span>Spring Boot</span><span>JWT</span><span>MySQL</span><span>Angular</span><span>API REST</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/gustavoFreitass/api-monitor" target="_blank" class="button-secondary">Ver no GitHub</a>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <h3>LISTIFI</h3>
+                        <p>Aplicação web para catalogar e gerenciar conteúdo multimídia. Inspirado pela minha paixão por animes e mangás, o projeto conta com painel administrativo e funcionalidades de pesquisa e exibição.</p>
+                        <div class="tech-tags">
+                            <span>PHP (Hack/HHVM)</span><span>MySQL</span><span>Composer</span><span>JavaScript</span><span>API REST</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://listifi.com.br/" target="_blank" class="button-secondary">Ver no Site</a>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <h3>MÉTODO ANALÍTICO EM PESQUISA OPERACIONAL</h3>
+                        <p>Ferramenta em Java desenvolvida para automatizar cálculos de otimização complexos, que reduziu o tempo de resolução de problemas de 30 para menos de 2 minutos para toda a minha turma.</p>
+                        <div class="tech-tags">
+                            <span>Java</span><span>Eclipse IDE</span><span>Git</span><span>Algoritmos</span><span>Collections</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/gustavoFreitass/metodoAnalitico" target="_blank" class="button-secondary">Ver no GitHub</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="hobbies">
+            <div class="section-content">
+                <h2>[POR FORA DA TECNOLOGIA]</h2>
+                <div class="hobbies-grid">
+                    <div class="hobby-card">
+                        <i class="fas fa-tv"></i>
+                        <h3>Animes & Mangás</h3>
+                        <p>Sou completamente fascinado pela construção de mundos e o desenvolvimento de personagens em animes e mangás. Acompanhar uma boa história, com sua arte e trilha sonora, é uma das minhas formas preferidas de me inspirar e relaxar.</p>
+                    </div>
+                    <div class="hobby-card">
+                        <i class="fas fa-gamepad"></i>
+                        <h3>Games</h3>
+                        <p>Seja explorando mundos vastos em um RPG ou planejando movimentos em um jogo de estratégia, os games são meu principal hobby para me divertir e testar meus limites. A sensação de superar um desafio difícil é imbatível.</p>
+                    </div>
+                    <div class="hobby-card">
+                        <i class="fas fa-chess-knight"></i>
+                        <h3>Xadrez</h3>
+                        <p>O xadrez é meu esporte mental preferido. Gosto da concentração total que uma partida exige e da elegância de uma estratégia bem executada. Cada jogo é um novo quebra-cabeça a ser resolvido.</p>
+                    </div>
+                    <div class="hobby-card">
+                        <i class="fas fa-dungeon"></i>
+                        <h3>RPG de Mesa</h3>
+                        <p>Não há nada como se reunir com amigos para uma sessão de RPG de mesa. Adoro a liberdade de criar personagens e construir uma história em conjunto, onde a criatividade e a colaboração de todos são essenciais para a aventura.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="experience">
+            <div class="section-content">
+                <h2>[EXPERIÊNCIA PROFISSIONAL]</h2>
+                <div class="job">
+                    <h3>Estagiário em Análise de Dados</h3>
+                    <p class="job-company">SECTI GO (Secretaria de Estado da Ciência, Tecnologia e Inovação) | 09/2024 - Atual</p>
+                    <ul>
+                        <li>Desenvolvimento de scripts em Python e SQL para automatizar a extração, limpeza e transformação de dados.</li>
+                        <li>Criação e manutenção de dashboards interativos no Power BI para visualização de indicadores de desempenho.</li>
+                        <li>Colaboração com diversas equipes para definir métricas e construir relatórios personalizados.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="education">
+            <div class="section-content">
+                <h2>[FORMAÇÃO ACADÊMICA]</h2>
+                <div class="education-entry">
+                    <h3>Bacharelado em Engenharia de Software</h3>
+                    <p>Centro Universitário Alves Faria - UNIALFA | 2023 - 2027</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact">
+            <div class="section-content">
+                <h2>[VAMOS CONSTRUIR ALGO JUNTOS?]</h2>
+                <p class="status">
+                    <span class="status-indicator"></span>
+                    Buscando ativamente por oportunidades de Estágio e Desenvolvedor Júnior.
+                </p>
+                <p>
+                    Se você tem um projeto em mente ou uma vaga que se encaixa no meu perfil, adoraria conversar. Você pode me encontrar no LinkedIn, WhatsApp, ou me enviar um e-mail para: <strong>gustavofirmino5011@gmail.com</strong>
+                </p>
+                <div class="contact-links">
+                    <a href="mailto:gustavofirmino5011@gmail.com" target="_blank" class="button-primary"><i class="fas fa-envelope"></i> E-MAIL</a>
+                    <a href="https://www.linkedin.com/in/gustavofirmino/" target="_blank" class="button-primary"><i class="fab fa-linkedin"></i> LINKEDIN</a>
+                    <a href="https://wa.me/5562991196385" target="_blank" class="button-primary"><i class="fab fa-whatsapp"></i> WHATSAPP</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>GUSTAVO FREITAS © 2025 // PROGAMAÇÃO E CAFÉ</p>
+    </footer>
+
+    <script src="script.js" defer></script>
+</body>
+</html>
